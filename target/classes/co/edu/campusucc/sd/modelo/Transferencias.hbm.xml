@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23/05/2020 02:30:19 PM by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="co.edu.campusucc.sd.modelo.Transferencias" optimistic-lock="version" polymorphism="implicit" schema="public" select-before-update="false" table="transferencias">
+        <id name="idTransferencias" type="string">
+            <column length="30" name="id_transferencias"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="co.edu.campusucc.sd.modelo.Cuenta" embed-xml="true" fetch="select" insert="true" name="cuenta" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="30" name="id_cuenta" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="montoDinero" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="monto_dinero" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="referenciaClienteDestino" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="referencia_cliente_destino" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="comision" optimistic-lock="true" type="int" unique="false">
+            <column name="comision" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaHora" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="29" name="fecha_hora" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="referenciaClienteRemitente" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="referencia_cliente_remitente" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
